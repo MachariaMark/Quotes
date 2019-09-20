@@ -10,7 +10,7 @@ As a user can ;
 * create a new quote.
 * Upvote or downvote a quote.
 * Delete a quote
-* See the number of upvotes and number of downvotes for each quote.
+*   See the number of upvotes and number of downvotes for each quote.
 ## Setup/Installation Requirements
 Want to contribute? Lovely!
 
