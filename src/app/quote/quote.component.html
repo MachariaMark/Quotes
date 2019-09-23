@@ -1,0 +1,60 @@
+<br>
+<div class="container mr-10">
+    <br>
+    <div>
+    <div class="card mb-4 bg-dark">
+        <div class="card-header text-white-50">
+            Today's featured quotes 
+            <div class="float-right">by a theoretical physicist</div>  
+        </div>
+        <div class="card-body">
+            <blockquote class="blockquote mb-0 text-white p-2">
+                <p> 
+                    Insanity: doing the same thing over and over again and expecting different results.<br>
+                    Imagination is more important than knowledge.<br>
+                    If you can't explain it simply, you don't understand it well enough.<br>
+                    Two things are infinite: the universe and human stupidity; and I'm not sure about the universe.<br>
+                    Life is like riding a bicycle. To keep your balance you must keep moving.<br>
+                    No problem can be solved from the same level of consciousness that created it.<br>
+                    The important thing is not to stop questioning. Curiosity has its own reason for existing.<br>
+                    I have no special talents. I am only passionately curious.<br>
+                    Anyone who has never made a mistake has never tried anything new.<br>
+                    Logic will get you from A to B. Imagination will take you everywhere.
+                </p>
+                <footer class="blockquote-footer">
+                    Author <cite title="Source Title"> Albert Einstein </cite>
+                </footer>
+            </blockquote>
+        </div>
+    </div>
+    <br>
+    </div>
+</div>
+
+<div class="container mr-10">
+    <div>
+        <table class="table table-sm table-dark">
+            <thead>
+                <tr>
+                    <th scope="col" class="text-white-50">The Quote for today is </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor= 'let quote of quotes'>
+                    <td>
+                        {{ quote.name }}
+                        <br>
+                        <button (click)='toggleDetails(i)' class="btn btn-info  ">Toggle Details</button>
+                        <app-quote-detail *ngIf='quote.showDescription' [quote]='quote'></app-quote-detail>
+                    </td>
+                    <td class="blockquote-footer d-block">
+                        Author <br> <cite title="Source Title"> {{ quote.author }} </cite>
+                    </td>
+                </tr>
+                
+            </tbody>
+        </table>     
+    </div>
+</div>
+
+ 
