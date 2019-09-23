@@ -4,7 +4,7 @@
 ## Description
 This project is an application where users can create quotes and have those quotes voted on whether they are terrible or are inspirational.
 ## Deployed website 
-...
+This app is live @  https://machariamark.github.io/Quotes/
 ## How it works 
 As a user can ;
 * create a new quote.
