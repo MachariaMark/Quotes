@@ -45,7 +45,7 @@
             <tr>
                 <div *ngFor= 'let quote of quotes;let i = index'>
                        
-                    <td> {{ quote.name }} </td>
+                    <td id="{{i}}"> {{ quote.quote}} {{ quote.mediumDate|date }}</td>
                     <td class="blockquote-footer float-right">
                         Author <br> <cite title="Source Title"> {{ quote.author }} </cite>
                     </td>
@@ -54,7 +54,7 @@
                     </td>
                      
                     
-                    <button (click)='toggleDetails(i)' class="btn btn-info m-2">Quote Details</button>
+                    <button (click)='toggleDetails(i)' class="btn btn-outline-light m-2">Quote Details</button>
 
                     <div *ngIf='quote.showDescription'>
                         <app-quote-detail  *ngIf='quote.showDescription' [quote]='quote' (isComplete) = 'deleteQuote($event,i)'></app-quote-detail>
