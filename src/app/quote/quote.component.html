@@ -31,30 +31,43 @@
     </div>
 </div>
 
+<app-quote-form (addQuote)="addNewQuote($event)"></app-quote-form>
+
 <div class="container mr-10">
-    <div>
-        <table class="table table-sm table-dark">
-            <thead>
-                <tr>
-                    <th scope="col" class="text-white-50">The Quote for today is </th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor= 'let quote of quotes'>
-                    <td>
-                        {{ quote.name }}
-                        <br>
-                        <button (click)='toggleDetails(i)' class="btn btn-info  ">Toggle Details</button>
-                        <app-quote-detail *ngIf='quote.showDescription' [quote]='quote'></app-quote-detail>
-                    </td>
-                    <td class="blockquote-footer d-block">
+    
+    <table class="table table-sm table-dark">
+        <thead>
+            <tr>
+                <th scope="col" class="text-white-50">Recently added Quotes</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <div *ngFor= 'let quote of quotes;let i = index'>
+                       
+                    <td> {{ quote.name }} </td>
+                    <td class="blockquote-footer float-right">
                         Author <br> <cite title="Source Title"> {{ quote.author }} </cite>
                     </td>
-                </tr>
+                    <td class="blockquote-footer float-left">
+                        Submitter <br> <cite title="Source Title"> {{ quote.submitter }} </cite>
+                    </td>
+                     
+                    
+                    <button (click)='toggleDetails(i)' class="btn btn-info m-2">Quote Details</button>
+
+                    <div *ngIf='quote.showDescription'>
+                        <app-quote-detail  *ngIf='quote.showDescription' [quote]='quote' (isComplete) = 'deleteQuote($event,i)'></app-quote-detail>
+                    </div>
+                    
+                                                 
+                </div>
+            
+            </tr>
                 
-            </tbody>
-        </table>     
-    </div>
+        </tbody>
+    </table>     
+    
 </div>
 
  
