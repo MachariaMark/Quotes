@@ -4,7 +4,7 @@
         <h1>
             <label for="Quote" class="text-white"><b>Quote</b></label>
         </h1>
-        <input type="text" id="quote" required class="form-control bg-dark" placeholder="write your quote..." [(ngModel)]="newQuote.name" name="quote"  #quote='ngModel' required>
+        <input type="text" id="quote" required class="form-control bg-dark" placeholder="write your quote..." [(ngModel)]="newQuote.quote" name="quote"  #quote='ngModel' required>
         <div [hidden]="quote.valid || quote.pristine" class="alert alert-danger">
             <p>This field is required</p>
           </div>
@@ -12,7 +12,7 @@
     <div class="row">
         <div class="col form-group">
             <label for="Author" class="text-white"><b>Author</b></label>
-            <input type="text"  id="author" class="form-control bg-dark" placeholder="Author's name" [(ngModel)]="newQuote.Author" name="author" #author="ngModel" required>
+            <input type="text"  id="author" class="form-control bg-dark" placeholder="Author's name" [(ngModel)]="newQuote.author" name="author" #author="ngModel" required>
             <div [hidden]="author.valid || author.pristine" class="alert alert-danger">
                 <p>Author's is required</p>
             </div>
