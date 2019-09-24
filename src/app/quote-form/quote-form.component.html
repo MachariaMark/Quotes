@@ -1,10 +1,13 @@
 <form class="container" (ngSubmit)='submitQuote()' #quoteForm='ngForm'>
-        <h2 class="text-center text-white"><b>Create a new Quote</b></h2>
+        <h2 class="text-center text-white"><b><img src="/assets/kisspng-quotation-mark-punctuation-left.png" class="img-right" alt="sharing is caring">Create a new Quote<img src="/assets/kisspng-quotation-mark-punctuation-right.png" class="img-right" alt="sharing is caring"></b></h2>
     <div class="form-group">
         <h1>
-            <label for="Quote" class="text-white"><b>Quote</b></label>
+            <label for="Quote" class="text-white">
+                <!-- <img src="/assets/you.png" class="img-right" alt="sharing is caring"> -->
+                <b>Quote</b>
+            </label>
         </h1>
-        <input type="text" id="quote" required class="form-control bg-dark" placeholder="write your quote..." [(ngModel)]="newQuote.quote" name="quote"  #quote='ngModel' required>
+        <input type="text" id="quote" required class="form-control bg-dark tx" placeholder="write your quote..." [(ngModel)]="newQuote.quote" name="quote"  #quote='ngModel' required>
         <div [hidden]="quote.valid || quote.pristine" class="alert alert-danger">
             <p>This field is required</p>
           </div>
@@ -12,15 +15,15 @@
     <div class="row">
         <div class="col form-group">
             <label for="Author" class="text-white"><b>Author</b></label>
-            <input type="text"  id="author" class="form-control bg-dark" placeholder="Author's name" [(ngModel)]="newQuote.author" name="author" #author="ngModel" required>
+            <input type="text"  id="author" class="form-control bg-dark tx" placeholder="Author's name" [(ngModel)]="newQuote.author" name="author" #author="ngModel" required>
             <div [hidden]="author.valid || author.pristine" class="alert alert-danger">
-                <p>Author's is required</p>
+                <p>Author's Name is required</p>
             </div>
         </div>
             
         <div class="col form-group">
             <label for="Submitter" class="text-white"><b>Submitter</b></label>
-            <input type="text" id="submitter" class="form-control bg-dark" placeholder="submitter's name" [(ngModel)]="newQuote.submitter" name="submitter" #submitter="ngModel" required>
+            <input type="text" id="submitter" class="form-control bg-dark tx" placeholder="submitter's name" [(ngModel)]="newQuote.submitter" name="submitter" #submitter="ngModel" required>
             <div [hidden]="submitter.valid || submitter.pristine" class="alert alert-danger">
                 <p>Submitter's Name is required</p>
             </div>
@@ -29,14 +32,14 @@
     <div class="form-group">
 
         <label for="Description" class="text-white"><b>Description <em class="text-white-50">*optional</em></b></label>
-        <textarea class="form-control bg-dark" id="description" placeholder="Add a little something.." rows="4"[(ngModel)]="newQuote.description" name="description" #description="ngModel" required></textarea>
+        <textarea class="form-control bg-dark tx" id="description" placeholder="Add a little something.." rows="4"[(ngModel)]="newQuote.description" name="description" #description="ngModel" required></textarea>
         <div [hidden]="description.valid || description.pristine" class="alert alert-danger">
             <p>*expound on the Author's quote and it's history</p>
         </div>
   
     </div>
     <div class="form-group">
-        <label for="medium  " class="text-white"><b>Completion</b></label>
+        <label for="medium  " class="text-white"><b>Date</b></label>
         <input type='date' id="medium" class="form-control bg-dark" [(ngModel)]="newQuote.mediumDate" name="mediumDate" #mediumDate="ngModel" required>
         <div [hidden]="mediumDate.valid || mediumDate.pristine" class="alert alert-danger">
               <p>Date is required</p>
