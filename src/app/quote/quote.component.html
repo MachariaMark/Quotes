@@ -54,7 +54,8 @@
                         Submitter <br> <cite title="Source Title"> {{ quote.submitter }} </cite>
                     </td>
                      
-                    
+                    <app-like></app-like>
+                    <app-dislike></app-dislike>
                     <button (click)='toggleDetails(i)' class="btn btn-outline-light m-2">Quote Details</button>
 
                     <div *ngIf='quote.showDescription'>
